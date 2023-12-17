@@ -11,7 +11,7 @@ protocol MedBookListViewModeling: AnyObject {
     var count: Int { get }
     var onSuccessStateHandler: ((Bool) -> Void)? { get set }
     
-    func fetchBooksDataFromAPI(for bookName: String, with offset: Int, completion: @escaping () -> Void)
+    func fetchBooksDataFromAPI(for bookName: String, with offset: Int)
     func sortByTitle(completion: @escaping () -> Void)
     func sortByAverage(completion: @escaping () -> Void)
     func sortByHits(completion: @escaping () -> Void)
@@ -68,11 +68,7 @@ class MedBookListViewController: UIViewController {
         }()
     
     func fetchBooks(for query: String = "") {
-        viewModel.fetchBooksDataFromAPI(for: query, with: 0) { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
+        viewModel.fetchBooksDataFromAPI(for: query, with: 0)
     }
     
     private func setUpHandlers() {
@@ -96,6 +92,10 @@ class MedBookListViewController: UIViewController {
         }
         
         tableView.reloadData()
+        if spinner.isAnimating {
+            spinner.stopAnimating()
+            spinner.isHidden = true
+        }
     }
     
     func titleSorting() {

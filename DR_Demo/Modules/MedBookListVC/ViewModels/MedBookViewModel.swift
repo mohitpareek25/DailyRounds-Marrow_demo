@@ -37,14 +37,12 @@ class MedBookViewModel: MedBookListViewModeling {
         self.networkLayer = networkLayer
     }
     
-    func fetchBooksDataFromAPI(for bookName: String, with offSet: Int = 0, completion: @escaping () -> Void) {
+    func fetchBooksDataFromAPI(for bookName: String, with offSet: Int = 0) {
         guard let url = URL(string: "https://openlibrary.org/search.json") else {
-            completion()
             return
         }
         
         guard !isLoading else {
-            completion()
             return
         }
         
@@ -61,7 +59,6 @@ class MedBookViewModel: MedBookListViewModeling {
         
         networkLayer.dataTask(apiRequest) { [weak self] (_ result: Result<Books, NetworkError>) in
             guard let self = self else {
-                completion()
                 return
             }
             
@@ -71,10 +68,8 @@ class MedBookViewModel: MedBookListViewModeling {
             case .success(let result):
                 configureData(data: result)
                 onSuccessStateHandler?(true)
-                completion()
             case .failure(let error):
                 print("Error: \(error)")
-                completion()
             }
         }
     }
@@ -136,6 +131,6 @@ class MedBookViewModel: MedBookListViewModeling {
     
     func doPaggination(completion: @escaping () -> Void) {
         offSet = offSet + 20
-        fetchBooksDataFromAPI(for: currentSearchQuery, with: offSet, completion: completion)
+        fetchBooksDataFromAPI(for: currentSearchQuery, with: offSet)
     }
 }
