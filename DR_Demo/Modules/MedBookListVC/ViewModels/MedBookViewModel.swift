@@ -7,20 +7,6 @@
 
 import Foundation
 
-protocol MedBookListViewModeling: AnyObject {
-    var count: Int { get }
-    var onSuccessStateHandler: ((Bool) -> Void)? { get set }
-    
-    func fetchBooksDataFromAPI(for bookName: String, with offset: Int, completion: @escaping () -> Void)
-    func sortByTitle(completion: @escaping () -> Void)
-    func sortByAverage(completion: @escaping () -> Void)
-    func sortByHits(completion: @escaping () -> Void)
-    func doPaggination(completion: @escaping () -> Void)
-    func getInfo(for index: Int) -> BooksListTableViewCellModelProtocol?
-    func dataFlushOut(for bookName: String)
-}
-
-
 class MedBookViewModel: MedBookListViewModeling {
     enum SortingType {
         case title
