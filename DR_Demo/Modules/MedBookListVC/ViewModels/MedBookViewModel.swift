@@ -16,6 +16,7 @@ class MedBookViewModel: MedBookListViewModeling {
     }
     
     var onSuccessStateHandler: ((Bool) -> Void)?
+    var onErrorStateHandler: ((String) -> Void)?
     var limit: Int = 20
     var totalLimit: Int = 0
     var offSet: Int = 0
@@ -39,10 +40,12 @@ class MedBookViewModel: MedBookListViewModeling {
     
     func fetchBooksDataFromAPI(for bookName: String, with offSet: Int = 0) {
         guard let url = URL(string: "https://openlibrary.org/search.json") else {
+            onErrorStateHandler?("Server error")
             return
         }
         
         guard !isLoading else {
+            onErrorStateHandler?("Still Loading the data....")
             return
         }
         
@@ -59,6 +62,7 @@ class MedBookViewModel: MedBookListViewModeling {
         
         networkLayer.dataTask(apiRequest) { [weak self] (_ result: Result<Books, NetworkError>) in
             guard let self = self else {
+                self?.onErrorStateHandler?("Some error occured")
                 return
             }
             
@@ -70,6 +74,7 @@ class MedBookViewModel: MedBookListViewModeling {
                 onSuccessStateHandler?(true)
             case .failure(let error):
                 print("Error: \(error)")
+                onErrorStateHandler?(error.localizedDescription)
             }
         }
     }
@@ -132,5 +137,6 @@ class MedBookViewModel: MedBookListViewModeling {
     func doPaggination(completion: @escaping () -> Void) {
         offSet = offSet + 20
         fetchBooksDataFromAPI(for: currentSearchQuery, with: offSet)
+        completion()
     }
 }

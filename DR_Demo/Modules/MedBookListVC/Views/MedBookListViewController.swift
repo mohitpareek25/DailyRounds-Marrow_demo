@@ -10,6 +10,7 @@ import UIKit
 protocol MedBookListViewModeling: AnyObject {
     var count: Int { get }
     var onSuccessStateHandler: ((Bool) -> Void)? { get set }
+    var onErrorStateHandler: ((String) -> Void)? { get set }
     
     func fetchBooksDataFromAPI(for bookName: String, with offset: Int)
     func sortByTitle(completion: @escaping () -> Void)
@@ -72,13 +73,17 @@ class MedBookListViewController: UIViewController {
     }
     
     private func setUpHandlers() {
-        viewModel.onSuccessStateHandler = { [weak self] success in
+        viewModel.onSuccessStateHandler = { [weak self] _ in
             guard let self else { return }
-            if success {
-                DispatchQueue.main.async {
-                    self.updateUI()
-                }
+            
+            DispatchQueue.main.async {
+                self.updateUI()
             }
+        }
+        
+        viewModel.onErrorStateHandler = { [weak self] errorMessage in
+            guard let self else { return }
+            print(errorMessage)
         }
     }
     
