@@ -32,7 +32,7 @@ class MedBookListViewController: UIViewController {
         }
     }
     private var viewModel: MedBookListViewModeling
-    
+    private var dispatchWorkItem: DispatchWorkItem? = nil
     
     init(_ viewModel: MedBookListViewModeling) {
         self.viewModel = viewModel
@@ -186,20 +186,18 @@ extension MedBookListViewController: UITableViewDataSource, UITableViewDelegate 
 //MARK: - Search Bar
 extension MedBookListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("%%%%%%%%% SEARCH TEXT: ", searchText)
+        //
+        dispatchWorkItem?.cancel()
         if searchText.count < 3 {
             viewModel.dataFlushOut(for: "")
             updateUI()
         } else if searchText.count >= 3 {
-            NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.reload(_:)), object: searchBar)
-            perform(#selector(self.reload(_:)), with: searchBar, afterDelay: 0.75)
+            let bookQueryWorkItem = DispatchWorkItem {
+                self.fetchBooks(for: searchText)
+            }
+            dispatchWorkItem = bookQueryWorkItem
+            print("%%%%%%%%% SEARCH TEXT: ", searchText)
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: bookQueryWorkItem)
         }
-    }
-    @objc func reload(_ searchBar: UISearchBar) {
-        guard let query = searchBar.text, query.trimmingCharacters(in: .whitespaces) != "" else {
-            print("nothing to search")
-            return
-        }
-        fetchBooks(for: query)
     }
 }
