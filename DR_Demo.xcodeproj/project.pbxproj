@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EE1FBA8BE44592225BA9863 /* Pods_DR_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679F9295C304149E8C8A6021 /* Pods_DR_Demo.framework */; };
+		9D2EBCDC2B3BDCCA0098F736 /* DRDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EBCDA2B3BDCCA0098F736 /* DRDataModel.xcdatamodeld */; };
 		9D82D2AE2B2F193A000DD197 /* CustomHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D82D2AD2B2F193A000DD197 /* CustomHeaderTableViewCell.swift */; };
 		9DBC82A52B2C7DB4007E3F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC82A42B2C7DB4007E3F55 /* AppDelegate.swift */; };
 		9DBC82A72B2C7DB4007E3F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC82A62B2C7DB4007E3F55 /* SceneDelegate.swift */; };
@@ -62,6 +63,7 @@
 		679F9295C304149E8C8A6021 /* Pods_DR_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DR_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AB03209AA31EC89238EE4AA /* Pods-DR_Demo-DR_DemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DR_Demo-DR_DemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-DR_Demo-DR_DemoUITests/Pods-DR_Demo-DR_DemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91DD933629E1A453E167093F /* Pods-DR_Demo-DR_DemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DR_Demo-DR_DemoUITests.release.xcconfig"; path = "Target Support Files/Pods-DR_Demo-DR_DemoUITests/Pods-DR_Demo-DR_DemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9D2EBCDB2B3BDCCA0098F736 /* DRDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DRDataModel.xcdatamodel; sourceTree = "<group>"; };
 		9D82D2AD2B2F193A000DD197 /* CustomHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9DBC82A12B2C7DB4007E3F55 /* DR_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DR_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBC82A42B2C7DB4007E3F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				9DBC82AD2B2C7DB6007E3F55 /* Assets.xcassets */,
 				9DBC82AF2B2C7DB6007E3F55 /* LaunchScreen.storyboard */,
+				9D2EBCDA2B3BDCCA0098F736 /* DRDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			files = (
 				9DBC82F72B2E3175007E3F55 /* NetworkLayer.swift in Sources */,
 				9DBC83042B2E31F7007E3F55 /* Constants.swift in Sources */,
+				9D2EBCDC2B3BDCCA0098F736 /* DRDataModel.xcdatamodeld in Sources */,
 				9DBC82FB2B2E3175007E3F55 /* JSONParser.swift in Sources */,
 				9DBC83102B2EFDAC007E3F55 /* ExtensionNumberUtility.swift in Sources */,
 				9DBC82A92B2C7DB4007E3F55 /* LoginViewController.swift in Sources */,
@@ -904,6 +908,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9D2EBCDA2B3BDCCA0098F736 /* DRDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9D2EBCDB2B3BDCCA0098F736 /* DRDataModel.xcdatamodel */,
+			);
+			currentVersion = 9D2EBCDB2B3BDCCA0098F736 /* DRDataModel.xcdatamodel */;
+			path = DRDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9DBC82992B2C7DB4007E3F55 /* Project object */;
 }
