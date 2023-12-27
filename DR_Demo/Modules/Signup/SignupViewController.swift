@@ -37,6 +37,25 @@ class SignupViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func letsGoBtnTapped(_ sender: UIButton) {
+        if let userName = emailTxtField.text, let password = passwordTxtFiled.text {
+            let details = DataManager.shared.saveUserNameAndPassword(userName: userName, password: password)
+            if details.0 {
+                let vc = MedBookListViewController(MedBookViewModel(networkLayer: NetworkLayerServices()))
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
+            } else {
+                // show alert that existing user already exits
+                debugPrint(details.1)
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
     private func setupTxtFields() {
         emailTxtField.delegate = self
         passwordTxtFiled.delegate = self

@@ -66,13 +66,13 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func validateCredentials() {
-            guard let email = emailTxtField.text, let password = passwordTxtFiled.text else {
+            guard let email = emailTxtField.text, let _ = passwordTxtFiled.text else {
                 // Handle invalid input
                 return
             }
 
             // Perform your validation logic for email and password
-        if email.isValidEmailAddress() && password.isPasswordValid() {
+        if email.isValidEmailAddress() {
                 // Valid credentials, you can proceed with further actions
             letsGoBtn.isEnabled = true
                 print("Valid email and password")
