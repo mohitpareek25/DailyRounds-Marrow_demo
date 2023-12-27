@@ -42,6 +42,7 @@ class DataManager {
         }
         userdetails.email = userName
         userdetails.password = password
+        save()
         return (true, "User signed up successfully")
         
     }

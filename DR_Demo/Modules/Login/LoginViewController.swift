@@ -46,8 +46,11 @@ class LoginViewController: UIViewController {
     @IBAction func letsGoBtnTapped(_ sender: UIButton) {
      
         if let userdetails = DataManager.shared.fetchUserName(emailTxtField.text ?? "") {
-            if passwordTxtFiled.text ?? "" == userdetails.password ?? "" {
+            if passwordTxtFiled.text ?? "_" == userdetails.password ?? "" {
                 // Naviagte to Med book
+                let vc = MedBookListViewController(MedBookViewModel(networkLayer: NetworkLayerServices()))
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             }
         }
         
