@@ -23,3 +23,5 @@ struct APIRequest {
     let queryParams: [String: Any]?
     let body: Data?
 }
+
+// 5 get and 5 post

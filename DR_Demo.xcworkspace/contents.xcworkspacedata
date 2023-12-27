@@ -2,16 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ModelDBClasses/UserDetails+CoreDataClass.swift">
+      location = "group:BookDetails+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:ModelDBClasses/UserDetails+CoreDataProperties.swift">
+      location = "group:BookDetails+CoreDataProperties.swift">
    </FileRef>
    <FileRef
-      location = "group:ModelDBClasses/BookDetails+CoreDataClass.swift">
+      location = "group:UserDetails+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:ModelDBClasses/BookDetails+CoreDataProperties.swift">
+      location = "group:UserDetails+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:DR_Demo.xcodeproj">

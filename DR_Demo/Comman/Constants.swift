@@ -25,5 +25,14 @@ struct Constants {
     
     struct Login {
         static let viewController = "LoginViewController"
+        
+        struct LoginUtility {
+            static let isLoggedIn = "isLoggedInUser"
+        }
     }
+    
+    struct MedBookDetails {
+        static let viewController = "MedBookDetailsViewController"
+    }
+    
 }

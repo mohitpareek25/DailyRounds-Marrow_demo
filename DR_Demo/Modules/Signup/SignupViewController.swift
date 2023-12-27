@@ -41,6 +41,7 @@ class SignupViewController: UIViewController {
         if let userName = emailTxtField.text, let password = passwordTxtFiled.text {
             let details = DataManager.shared.saveUserNameAndPassword(userName: userName, password: password)
             if details.0 {
+                LoginUtilities.saveLogin()
                 let vc = MedBookListViewController(MedBookViewModel(networkLayer: NetworkLayerServices()))
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)

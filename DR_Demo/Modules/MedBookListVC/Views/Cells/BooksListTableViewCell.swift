@@ -13,6 +13,7 @@ protocol BooksListTableViewCellModelProtocol {
     var ratingsAverage: String { get }
     var authorName: String { get }
     var coverImage: String { get }
+    var key: String { get }
 }
 
 struct BooksListTableViewCellModel: BooksListTableViewCellModelProtocol {
@@ -21,6 +22,7 @@ struct BooksListTableViewCellModel: BooksListTableViewCellModelProtocol {
     var ratingsAverage: String
     var authorName: String
     var coverImage: String
+    var key: String
 }
 
 class BooksListTableViewCell: UITableViewCell {

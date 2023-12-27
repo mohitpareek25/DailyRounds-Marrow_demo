@@ -16,8 +16,9 @@ extension BookDetails {
         return NSFetchRequest<BookDetails>(entityName: "BookDetails")
     }
 
+    @NSManaged public var author: String?
     @NSManaged public var image: String?
     @NSManaged public var title: String?
-    @NSManaged public var author: String?
+    @NSManaged public var key: String?
 
 }

@@ -16,6 +16,13 @@
 		9D2EBCE92B3BE22D0098F736 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D2EBCE72B3BE22D0098F736 /* SignupViewController.xib */; };
 		9D2EBCEB2B3BE46A0098F736 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2EBCEA2B3BE46A0098F736 /* ExtensionString.swift */; };
 		9D82D2AE2B2F193A000DD197 /* CustomHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D82D2AD2B2F193A000DD197 /* CustomHeaderTableViewCell.swift */; };
+		9DA7DEC02B3BF9DF002D3B7D /* MedBookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7DEBE2B3BF9DF002D3B7D /* MedBookDetailsViewController.swift */; };
+		9DA7DEC12B3BF9DF002D3B7D /* MedBookDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7DEBF2B3BF9DF002D3B7D /* MedBookDetailsViewController.xib */; };
+		9DA7DEC32B3BFA6D002D3B7D /* MedBookDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7DEC22B3BFA6D002D3B7D /* MedBookDetailsViewModel.swift */; };
+		9DA7DEC62B3BFDAE002D3B7D /* BookDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7DEC52B3BFDAE002D3B7D /* BookDetails.swift */; };
+		9DA7DEC82B3C0892002D3B7D /* LoginUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7DEC72B3C0892002D3B7D /* LoginUtilities.swift */; };
+		9DA7DECC2B3C419D002D3B7D /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA7DECA2B3C419D002D3B7D /* BookmarksViewController.swift */; };
+		9DA7DECD2B3C419D002D3B7D /* BookmarksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA7DECB2B3C419D002D3B7D /* BookmarksViewController.xib */; };
 		9DBC82A52B2C7DB4007E3F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC82A42B2C7DB4007E3F55 /* AppDelegate.swift */; };
 		9DBC82A72B2C7DB4007E3F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC82A62B2C7DB4007E3F55 /* SceneDelegate.swift */; };
 		9DBC82A92B2C7DB4007E3F55 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBC82A82B2C7DB4007E3F55 /* LandingViewController.swift */; };
@@ -77,6 +84,13 @@
 		9D2EBCE72B3BE22D0098F736 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		9D2EBCEA2B3BE46A0098F736 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		9D82D2AD2B2F193A000DD197 /* CustomHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		9DA7DEBE2B3BF9DF002D3B7D /* MedBookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookDetailsViewController.swift; sourceTree = "<group>"; };
+		9DA7DEBF2B3BF9DF002D3B7D /* MedBookDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedBookDetailsViewController.xib; sourceTree = "<group>"; };
+		9DA7DEC22B3BFA6D002D3B7D /* MedBookDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedBookDetailsViewModel.swift; sourceTree = "<group>"; };
+		9DA7DEC52B3BFDAE002D3B7D /* BookDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetails.swift; sourceTree = "<group>"; };
+		9DA7DEC72B3C0892002D3B7D /* LoginUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUtilities.swift; sourceTree = "<group>"; };
+		9DA7DECA2B3C419D002D3B7D /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		9DA7DECB2B3C419D002D3B7D /* BookmarksViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksViewController.xib; sourceTree = "<group>"; };
 		9DBC82A12B2C7DB4007E3F55 /* DR_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DR_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBC82A42B2C7DB4007E3F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DBC82A62B2C7DB4007E3F55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +177,34 @@
 				9D2EBCE72B3BE22D0098F736 /* SignupViewController.xib */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		9DA7DEBD2B3BF9C8002D3B7D /* MedBookDetails */ = {
+			isa = PBXGroup;
+			children = (
+				9DA7DEC42B3BFDA0002D3B7D /* Models */,
+				9DA7DEBE2B3BF9DF002D3B7D /* MedBookDetailsViewController.swift */,
+				9DA7DEBF2B3BF9DF002D3B7D /* MedBookDetailsViewController.xib */,
+				9DA7DEC22B3BFA6D002D3B7D /* MedBookDetailsViewModel.swift */,
+			);
+			path = MedBookDetails;
+			sourceTree = "<group>";
+		};
+		9DA7DEC42B3BFDA0002D3B7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9DA7DEC52B3BFDAE002D3B7D /* BookDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9DA7DEC92B3C418E002D3B7D /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				9DA7DECA2B3C419D002D3B7D /* BookmarksViewController.swift */,
+				9DA7DECB2B3C419D002D3B7D /* BookmarksViewController.xib */,
+			);
+			path = Bookmarks;
 			sourceTree = "<group>";
 		};
 		9DBC82982B2C7DB4007E3F55 = {
@@ -267,6 +309,7 @@
 				9DBC83032B2E31F7007E3F55 /* Constants.swift */,
 				9DBC830F2B2EFDAC007E3F55 /* ExtensionNumberUtility.swift */,
 				9D2EBCEA2B3BE46A0098F736 /* ExtensionString.swift */,
+				9DA7DEC72B3C0892002D3B7D /* LoginUtilities.swift */,
 			);
 			path = Comman;
 			sourceTree = "<group>";
@@ -306,10 +349,12 @@
 		E17CA5272B2E392200A63CB6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9DA7DEC92B3C418E002D3B7D /* Bookmarks */,
 				9D2EBCE52B3BE2210098F736 /* Signup */,
 				9D2EBCE02B3BDF610098F736 /* Login */,
 				9DBC82A82B2C7DB4007E3F55 /* LandingViewController.swift */,
 				9DBC82AA2B2C7DB4007E3F55 /* Main.storyboard */,
+				9DA7DEBD2B3BF9C8002D3B7D /* MedBookDetails */,
 				9DBC82D42B2C7E04007E3F55 /* MedBookListVC */,
 			);
 			path = Modules;
@@ -454,10 +499,12 @@
 			files = (
 				9DBC82FF2B2E31C8007E3F55 /* MedBookListViewController.xib in Resources */,
 				9DBC83092B2E36A9007E3F55 /* BooksListTableViewCell.xib in Resources */,
+				9DA7DECD2B3C419D002D3B7D /* BookmarksViewController.xib in Resources */,
 				9D2EBCE42B3BDF770098F736 /* LoginViewController.xib in Resources */,
 				9DBC82B12B2C7DB6007E3F55 /* LaunchScreen.storyboard in Resources */,
 				9DBC82AE2B2C7DB6007E3F55 /* Assets.xcassets in Resources */,
 				9D2EBCE92B3BE22D0098F736 /* SignupViewController.xib in Resources */,
+				9DA7DEC12B3BF9DF002D3B7D /* MedBookDetailsViewController.xib in Resources */,
 				9DBC82AC2B2C7DB4007E3F55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,18 +633,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DA7DECC2B3C419D002D3B7D /* BookmarksViewController.swift in Sources */,
+				9DA7DEC82B3C0892002D3B7D /* LoginUtilities.swift in Sources */,
 				9D2EBCE32B3BDF770098F736 /* LoginViewController.swift in Sources */,
 				9DBC82F72B2E3175007E3F55 /* NetworkLayer.swift in Sources */,
 				9D2EBCE82B3BE22D0098F736 /* SignupViewController.swift in Sources */,
 				9DBC83042B2E31F7007E3F55 /* Constants.swift in Sources */,
 				9D2EBCDC2B3BDCCA0098F736 /* DRDataModel.xcdatamodeld in Sources */,
 				9DBC82FB2B2E3175007E3F55 /* JSONParser.swift in Sources */,
+				9DA7DEC32B3BFA6D002D3B7D /* MedBookDetailsViewModel.swift in Sources */,
 				9DBC83102B2EFDAC007E3F55 /* ExtensionNumberUtility.swift in Sources */,
 				9DBC82A92B2C7DB4007E3F55 /* LandingViewController.swift in Sources */,
 				9D2EBCEB2B3BE46A0098F736 /* ExtensionString.swift in Sources */,
 				9DBC82F82B2E3175007E3F55 /* URLGenerator.swift in Sources */,
 				9DBC82A52B2C7DB4007E3F55 /* AppDelegate.swift in Sources */,
 				E17CA52A2B2E395D00A63CB6 /* ImageLayer.swift in Sources */,
+				9DA7DEC62B3BFDAE002D3B7D /* BookDetails.swift in Sources */,
 				9DBC82FE2B2E31C8007E3F55 /* MedBookListViewController.swift in Sources */,
 				9DBC82E02B2D90AF007E3F55 /* Books.swift in Sources */,
 				9DBC82F92B2E3175007E3F55 /* APIRequest.swift in Sources */,
@@ -609,6 +660,7 @@
 				9DBC83012B2E31E7007E3F55 /* MedBookViewModel.swift in Sources */,
 				9D2EBCDF2B3BDD8D0098F736 /* CoreDataManager.swift in Sources */,
 				9DBC82A72B2C7DB4007E3F55 /* SceneDelegate.swift in Sources */,
+				9DA7DEC02B3BF9DF002D3B7D /* MedBookDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

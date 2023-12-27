@@ -60,4 +60,38 @@ class DataManager {
         return userDetailsArr?.first
     }
     
+    func saveBookDetails(name: String, authorName: String, image: String, key: String) {
+        if let details = fetchBookDetails(for: key) {
+            return 
+        }
+        let bookDetails = BookDetails(context: persistentContainer.viewContext)
+        bookDetails.title = name
+        bookDetails.author = authorName
+        bookDetails.image = image
+        bookDetails.key = key
+        save()
+    }
+    
+    func fetchBookDetails(for key: String? = nil) -> [BookDetails]? {
+        let request: NSFetchRequest<BookDetails> = BookDetails.fetchRequest()
+        if let key {
+            request.predicate = NSPredicate(format: "key = %@", key)
+        }
+          var bookDetailsArr: [BookDetails]?
+          do {
+              let details = try persistentContainer.viewContext.fetch(request)
+              bookDetailsArr = details
+          } catch let error {
+            print("Error fetching songs \(error)")
+          }
+        return bookDetailsArr
+    }
+    
+    func removeBook(for key: String) {
+        if let book = fetchBookDetails(for: key)?.first {
+            let contex = persistentContainer.viewContext
+            contex.delete(book)
+            save()
+        }
+    }
 }

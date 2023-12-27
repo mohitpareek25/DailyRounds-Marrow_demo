@@ -30,6 +30,11 @@ class LandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if LoginUtilities.isLoggedIn() {
+            let vc = MedBookListViewController(MedBookViewModel(networkLayer: NetworkLayerServices()))
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true)
+        }
     }
 
     @IBAction func loginBtnPressed(_ sender: UIButton) {

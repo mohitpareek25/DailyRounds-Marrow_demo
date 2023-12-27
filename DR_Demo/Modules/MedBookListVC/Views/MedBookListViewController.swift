@@ -19,6 +19,7 @@ protocol MedBookListViewModeling: AnyObject {
     func doPaggination(completion: @escaping () -> Void)
     func getInfo(for index: Int) -> BooksListTableViewCellModelProtocol?
     func dataFlushOut(for bookName: String)
+    func canPaginate() -> Bool
 }
 
 class MedBookListViewController: UIViewController {
@@ -159,20 +160,34 @@ extension MedBookListViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let numberOfSections = tableView.numberOfSections - 1
-        let lastRowIndex = tableView.numberOfRows(inSection: numberOfSections) - 3
-        
-        if indexPath.row == lastRowIndex {
-            spinner.startAnimating()
-            spinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44.0)
-            tableView.tableFooterView = spinner
-            tableView.tableFooterView?.isHidden = false
-            self.viewModel.doPaggination {
-                DispatchQueue.main.async {
-                    self.updateUI()
+        if viewModel.canPaginate() {
+            let numberOfSections = tableView.numberOfSections - 1
+            let lastRowIndex = tableView.numberOfRows(inSection: numberOfSections) - 3
+            
+            if indexPath.row == lastRowIndex {
+                spinner.startAnimating()
+                spinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44.0)
+                tableView.tableFooterView = spinner
+                tableView.tableFooterView?.isHidden = false
+                
+                
+                self.viewModel.doPaggination {
+                    DispatchQueue.main.async {
+                        self.updateUI()
+                    }
                 }
             }
+
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let data = viewModel.getInfo(for: indexPath.row) else { return }
+        let model = MedBookDetailsViewDataModel(key: data.key, image: data.coverImage, author: data.authorName)
+        let vc = MedBookDetailsViewController(MedBookDetailsViewModel(networkLayer: NetworkLayerServices()), datamodel: model)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

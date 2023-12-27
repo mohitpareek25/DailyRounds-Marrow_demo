@@ -12,6 +12,7 @@ struct Docs: Codable {
     let ratings_count : Int?
     let cover_i : Int?
     let author_name : [String]?
+    let key: String?
 
     enum CodingKeys: String, CodingKey {
         case title = "title"
@@ -19,6 +20,7 @@ struct Docs: Codable {
         case ratings_count = "ratings_count"
         case cover_i = "cover_i"
         case author_name = "author_name"
+        case key = "key"
     }
 
     init(from decoder: Decoder) throws {
@@ -28,6 +30,7 @@ struct Docs: Codable {
         ratings_count = try values.decodeIfPresent(Int.self, forKey: .ratings_count)
         cover_i = try values.decodeIfPresent(Int.self, forKey: .cover_i)
         author_name = try values.decodeIfPresent([String].self, forKey: .author_name)
+        key = try values.decodeIfPresent(String.self, forKey: .key)
     }
 
 }

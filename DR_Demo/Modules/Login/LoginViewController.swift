@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
         if let userdetails = DataManager.shared.fetchUserName(emailTxtField.text ?? "") {
             if passwordTxtFiled.text ?? "_" == userdetails.password ?? "" {
                 // Naviagte to Med book
+                LoginUtilities.saveLogin()
                 let vc = MedBookListViewController(MedBookViewModel(networkLayer: NetworkLayerServices()))
                 vc.modalPresentationStyle = .overFullScreen
                 self.present(vc, animated: true)

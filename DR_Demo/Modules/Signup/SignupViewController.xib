@@ -81,7 +81,7 @@
                                         <constraint firstAttribute="height" constant="50" id="Shy-m8-eRR"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" textContentType="password"/>
+                                    <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -150,7 +150,7 @@
                                         <constraint firstAttribute="width" constant="16" id="mLi-eC-om9"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least 8 characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jld-7a-vr5">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Must contains an uppercase letter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jld-7a-vr5">
                                     <rect key="frame" x="48" y="2" width="297" height="26"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="04D-nW-zD6"/>
@@ -180,7 +180,7 @@
                                         <constraint firstAttribute="width" constant="16" id="iil-yq-DJ1"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="At least 8 characters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xQ-mo-8M8">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="contains a special character" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xQ-mo-8M8">
                                     <rect key="frame" x="48" y="2" width="297" height="26"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="26" id="4w2-As-3aT"/>

@@ -84,7 +84,7 @@ class MedBookViewModel: MedBookListViewModeling {
         
         self.totalLimit = data.numFound ?? 0
         self.docs.append(contentsOf: _docs)
-        
+    
         switch sortingType {
         case .title:
             finalData = docs.sorted{ $0.title ?? "" < $1.title ?? ""}
@@ -107,10 +107,11 @@ class MedBookViewModel: MedBookListViewModeling {
         if finalData.count > 0 {
             let _model = finalData[index]
             return BooksListTableViewCellModel(bookTitle: _model.title ?? "",
-                                               ratingsCount: String(_model.ratings_count ?? 0),
-                                               ratingsAverage: _model.ratings_average?.truncateZeros() ?? "0",
+                                               ratingsCount:  _model.ratings_count ?? 0 > 0 ? String(_model.ratings_count ?? 0) : "N.A",
+                                               ratingsAverage: _model.ratings_average?.truncateZeros() ?? "N.A",
                                                authorName: _model.author_name?.first ?? "",
-                                               coverImage: String(_model.cover_i ?? 0))
+                                               coverImage: String(_model.cover_i ?? 0),
+                                               key: _model.key ?? "")
         }
         
         return nil
@@ -138,5 +139,13 @@ class MedBookViewModel: MedBookListViewModeling {
         offSet = offSet + 20
         fetchBooksDataFromAPI(for: currentSearchQuery, with: offSet)
         completion()
+    }
+    
+    func canPaginate() -> Bool {
+        offSet = offSet + 20
+        if offSet <= totalLimit {
+            return true
+        }
+        return false
     }
 }
