@@ -33,15 +33,13 @@ class LandingViewController: UIViewController {
     }
 
     @IBAction func loginBtnPressed(_ sender: UIButton) {
-        let vc = MedBookListViewController(MedBookViewModel(networkLayer: NetworkLayerServices()))
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
+        let vc = LoginViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func signUpPressed(_ sender: UIButton) {
-        let vc = MedBookListViewController(MedBookViewModel(networkLayer: NetworkLayerServices()))
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true)
+        let vc = SignupViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

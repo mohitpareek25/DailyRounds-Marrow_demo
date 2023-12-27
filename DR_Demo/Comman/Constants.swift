@@ -18,4 +18,12 @@ struct Constants {
         }
         
     }
+    
+    struct Signup {
+        static let viewController = "SignupViewController"
+    }
+    
+    struct Login {
+        static let viewController = "LoginViewController"
+    }
 }

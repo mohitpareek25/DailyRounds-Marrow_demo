@@ -38,6 +38,9 @@
                     <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system" imagePlacement="trailing" title="Let's go" imagePadding="8">
                         <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="letsGoBtnTapped:" destination="-1" eventType="touchUpInside" id="fMo-He-FDM"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2x5-pQ-NLh">
                     <rect key="frame" x="16" y="180" width="361" height="126"/>

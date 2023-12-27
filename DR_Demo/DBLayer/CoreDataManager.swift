@@ -34,4 +34,29 @@ class DataManager {
             }
         }
     }
+    
+    func saveUserNameAndPassword(userName: String, password: String) -> (Bool, String) {
+        let userdetails = UserDetails(context: persistentContainer.viewContext)
+        if let _ = fetchUserName(userName) {
+            return (false, "UserName already exists")
+        }
+        userdetails.email = userName
+        userdetails.password = password
+        return (true, "User signed up successfully")
+        
+    }
+    
+    func fetchUserName(_ userName: String) -> UserDetails? {
+        let request: NSFetchRequest<UserDetails> = UserDetails.fetchRequest()
+          request.predicate = NSPredicate(format: "email = %@", userName)
+          var userDetailsArr: [UserDetails]?
+          do {
+              let details = try persistentContainer.viewContext.fetch(request)
+              userDetailsArr = details
+          } catch let error {
+            print("Error fetching songs \(error)")
+          }
+        return userDetailsArr?.first
+    }
+    
 }
